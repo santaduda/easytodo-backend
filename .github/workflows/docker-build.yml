@@ -5,8 +5,6 @@ on:
     branches: [ feature/github_build_django ]
   pull_request:
     branches: [ feature/github_build_django ]
-env:
-  version: ${{ github.run_number }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,4 +30,4 @@ jobs:
         with:
           push: true
           file: .devcontainer/Dockerfile
-          tags: prashanthdevaraj/easytodo-backend:latest, prashanthdevaraj/easytodo-backend:$${version}}
+          tags: prashanthdevaraj/easytodo-backend:latest, prashanthdevaraj/easytodo-backend:${{ github.run_number }}
