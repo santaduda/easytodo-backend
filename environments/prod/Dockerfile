@@ -19,4 +19,4 @@ COPY . /code
 
 EXPOSE 80
 
-CMD ["gunicorn", "--bind", ":80", "--workers", "3", "easytodo.wsgi:application"
+CMD ["gunicorn", "--bind", ":80", "--workers", "3", "easytodo.wsgi:application"]
