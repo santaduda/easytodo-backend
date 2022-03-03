@@ -3,8 +3,6 @@ version: '3.8'
 services:
   app:
     image: prashanthdevaraj/easytodo-backend:latest
-    volumes:
-      - .:/workspace:cached
 
     # Overrides default command so things don't shut down after the process ends.
-    command: gunicorn easytodo.wsgi --bind 0.0.0.0:80
+    command: python /workspace/manage.py runserver 0.0.0.0:80

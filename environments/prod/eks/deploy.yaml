@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: easytodo-api
-        image: 632919071643.dkr.ecr.ap-south-1.amazonaws.com/easytodo:8ed2d47e02d34d07ce605dfb937416bbcde2bebd
+        image: 632919071643.dkr.ecr.ap-south-1.amazonaws.com/easytodo:ca320fc94c1a570465b02b6ba620519f48f6559c
         ports:
         - containerPort: 80
