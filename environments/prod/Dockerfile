@@ -16,3 +16,7 @@ COPY . /code
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
+
+EXPOSE 80
+
+CMD ["gunicorn", "--bind", ":80", "--workers", "3", "easytodo.wsgi:application"

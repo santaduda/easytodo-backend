@@ -3,6 +3,6 @@ version: '3.8'
 services:
   app:
     image: prashanthdevaraj/easytodo-backend:latest
-
-    # Overrides default command so things don't shut down after the process ends.
-    command: python /workspace/manage.py runserver 0.0.0.0:80
+    command: gunicorn easytodo.wsgi --bind 0.0.0.0:8000    
+    ports:
+      - "80:8000"
