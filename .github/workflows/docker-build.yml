@@ -1,4 +1,4 @@
-name: Docker Image CI/CD
+name: Deploy to Production
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       -
         name: Checkout
