@@ -21,6 +21,20 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
+      - name: Generate Pro .env file
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          envkey_DEBUG: ${{ secrets.DEBUG }}
+          envkey_POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          envkey_POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          envkey_POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          file_name: .env
+          fail_on_empty: false
+      - name: List all files in folder
+        run : |
+          ls -l
+          cat .env
       - name: Copy Prod Environment files to project root folder
         run : |
           cp environments/prod/docker-compose.yml environments/prod/Dockerfile .
