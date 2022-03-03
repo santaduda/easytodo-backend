@@ -3,3 +3,4 @@ psycopg2
 django-environ
 djangorestframework
 drf-yasg
+gunicorn

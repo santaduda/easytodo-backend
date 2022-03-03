@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: easytodo-api-deployment
+  labels:
+    app: easytodo-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: easytodo-api
+  template:
+    metadata:
+      labels:
+        app: easytodo-api
+    spec:
+      containers:
+      - name: easytodo-api
+        image: 632919071643.dkr.ecr.ap-south-1.amazonaws.com/easytodo:8ed2d47e02d34d07ce605dfb937416bbcde2bebd
+        ports:
+        - containerPort: 80
