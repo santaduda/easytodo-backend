@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   app:
-    image: prashanthdevaraj/easytodo-backend:latest
-    command: gunicorn easytodo.wsgi --bind 0.0.0.0:8000    
+    build: .
     ports:
-      - "80:8000"
+      - "80:80"
